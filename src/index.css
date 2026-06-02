@@ -1,0 +1,5 @@
+.my-active {
+  background-color: red;
+  color: white !important;
+  font-style: italic;
+}

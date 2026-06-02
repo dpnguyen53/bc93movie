@@ -1,0 +1,42 @@
+===== Buổi 1 =====
+    - SPA
+
+
+    - Component: jsx
+        * Stateful: class
+        * Stateless: function
+    - DataBinding - rendering element: {}
+    - Event Handle
+
+===== Buổi 2 =====
+    - Render Condition
+    - State: re-render cho component nếu state thay đổi giá trị
+
+===== Buổi 3 =====
+    - List key
+    - Communication
+        + Props: Truyền data từ component cha => component con
+        + Lifting state up: Truyền data từ component con => component cha
+
+===== Buổi 4 =====
+    Shopping phone
+
+===== Buổi 5 =====
+    Redux => tao store
+
+===== Buổi 6 =====
+    Shopping phone redux:
+        useSelector: lấy dữ liệu từ reducer => component
+        useDisptach: gửi dữ liệu từ component => reducer
+
+
+===== Buổi 7 =====
+    React router: react-router-dom
+
+===== Buổi 8 =====
+    React Form + Validation form
+    Hooks: useState; useEffect, memo
+
+===== Buổi 9 =====
+     Hooks: useState; useEffect, memo, useCallback, useMemo
+     restful appi: axios
