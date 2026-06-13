@@ -1,6 +1,15 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Xóa thông tin user khỏi localStorage
+    localStorage.removeItem("user");
+    // Quay về trang Home
+    navigate("/");
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -19,6 +28,7 @@ export default function Header() {
           <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          {/* Nav links bên trái */}
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <NavLink
@@ -42,6 +52,11 @@ export default function Header() {
               </NavLink>
             </li>
           </ul>
+
+          {/* Nút Logout bên phải — xóa localStorage và về trang Home */}
+          <button className="btn btn-outline-danger btn-sm" onClick={handleLogout}>
+            Logout
+          </button>
         </div>
       </div>
     </nav>

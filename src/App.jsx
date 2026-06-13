@@ -5,6 +5,7 @@ import Home from "./pages/HomeTemplate/Home";
 import ListMovie from "./pages/HomeTemplate/ListMovie";
 import Contact from "./pages/HomeTemplate/Contact";
 import Hooks from "./pages/HomeTemplate/Hooks";
+import MovieDetail from "./pages/HomeTemplate/MovieDetail";
 
 import AdminTemplate from "./pages/AdminTemplate";
 import Dashboard from "./pages/AdminTemplate/Dashboard";
@@ -20,6 +21,7 @@ function App() {
           <Route path="list-movie" element={<ListMovie />} />
           <Route path="contact" element={<Contact />} />
           <Route path="hooks" element={<Hooks />} />
+          <Route path="detail/:maPhim" element={<MovieDetail />} />
         </Route>
 
         <Route path="admin" element={<AdminTemplate />}>
