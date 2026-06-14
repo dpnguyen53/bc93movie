@@ -3,41 +3,15 @@ import axios from "axios";
 import Movie from "../Component/Movie";
 import Loader from "../Component/Loader";
 import api from "./../../../services/api";
+import { getListMovie } from "./silce";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Home() {
-  const [state, setState] = useState({
-    loading: false,
-    data: null,
-    error: null,
-  });
+  const disptach = useDispatch();
+  const state = useSelector((state) => state.homeReducer);
 
   useEffect(() => {
-    const getListMovie = async () => {
-      try {
-        // pending => update loading: true
-        setState({
-          ...state,
-          loading: true,
-        });
-
-        const result = await api.get("QuanLyPhim/LayDanhSachPhim?maNhom=GP01");
-        // success
-        setState({
-          ...state,
-          loading: false,
-          data: result.data.content,
-        });
-      } catch (error) {
-        // fail
-        setState({
-          ...state,
-          loading: false,
-          error: error,
-        });
-      }
-    };
-
-    getListMovie();
+    disptach(getListMovie());
   }, []);
 
   const renderListMovie = () => {

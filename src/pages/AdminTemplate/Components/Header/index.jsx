@@ -1,11 +1,13 @@
 import { NavLink, useNavigate } from "react-router-dom";
+import { actLogout } from "./../../Auth/slice";
+import { useDispatch } from "react-redux";
 
 export default function Header() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Xóa thông tin user khỏi localStorage
-    localStorage.removeItem("user");
+    dispatch(actLogout());
     // Quay về trang Home
     navigate("/");
   };
@@ -54,7 +56,10 @@ export default function Header() {
           </ul>
 
           {/* Nút Logout bên phải — xóa localStorage và về trang Home */}
-          <button className="btn btn-outline-danger btn-sm" onClick={handleLogout}>
+          <button
+            className="btn btn-outline-danger btn-sm"
+            onClick={handleLogout}
+          >
             Logout
           </button>
         </div>

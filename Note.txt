@@ -42,3 +42,11 @@
      restful appi: axios
 
 ===== Buổi 10 =====
+    - Detail
+    - Authentication
+    - Guard
+
+===== Buổi 11 =====
+    - Refactor Home => reducer
+               Auth => reducer
+               Detail => ...
